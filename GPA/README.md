@@ -1,3 +1,7 @@
+Abaixo, consta o conteúdo do arquivo "README.md" do software GPA de Sautter, obtido em 2017 do repositório https://github.com/rsautter/GPA, cujos códigos desta versão específica do software, utilizados nesta dissertação, constam neste diretório.
+
+---------------------------------------------------------------------------------
+
 # Concentric Gradient Pattern Analysis
 This is a Concentric Gradient Pattern Analysis (CGPA) prototype developed in Cython + Python
 
