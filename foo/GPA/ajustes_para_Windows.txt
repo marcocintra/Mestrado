@@ -1,0 +1,81 @@
+COMPILE.PY
+
+from distutils.core import setup
+from Cython.Build import cythonize
+from Cython.Distutils import build_ext
+import numpy as np                           # <---- New line
+
+setup(
+    ext_modules=cythonize("*.pyx"),
+    annotate=True,
+    include_path = [np.get_include()]
+)
+
+
+---LINHA 252 GPA.C
+
+
+//#include <numpy\arrayobject.h> COMENTAR
+#include "C:\ProgramData\Anaconda3\lib\site-packages\numpy \core\include\numpy\arrayobject.h" ADICIONAR 
+//#include <numpy\ufuncobject.h> COMENTAR
+#include "C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\include\numpy\ufuncobject.h" ADICIONAR 
+
+
+
+---LINHA 4 UFUNCOBJECT.H (NUMPY DIRECTORY)
+
+//#include <numpy/npy_math.h> COMENTAR
+#include "C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\include\numpy\npy_math.h" ADICIONAR
+//#include <numpy/npy_common.h> COMENTAR
+#include "C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\include\numpy\npy_common.h" ADICIONAR
+
+
+---LINHA 4 NPY_MATH.H (NUMPY DIRECTORY)
+
+//#include <numpy/npy_common.h> COMENTAR
+#include "C:\ProgramData\Anaconda3\lib\site-packages\numpy\core\include\numpy\npy_common.h" ADICIONAR
+
+
+ARQUIVO GERADO APÓS COMPILAÇÃO:
+
+GPA.cp36-win_amd64
+
+C:\Users\Marco Antônio\Desktop\Mestrado\GPA\GPA_AD-master\gpa>python compile.py build_ext --inplace
+C:\ProgramData\Anaconda3\lib\distutils\dist.py:261: UserWarning: Unknown distribution option: 'annotate'
+  warnings.warn(msg)
+C:\ProgramData\Anaconda3\lib\distutils\dist.py:261: UserWarning: Unknown distribution option: 'include_path'
+  warnings.warn(msg)
+running build_ext
+building 'GPA' extension
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\BIN\x86_amd64\cl.exe /c /nologo /Ox /W3 /GL /DNDEBUG /MD -IC:\ProgramData\Anaconda3\include -IC:\ProgramData\Anaconda3\include "-IC:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" "-IC:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.10586.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.10586.0\shared" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.10586.0\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.10586.0\winrt" /TcGPA.c /Fobuild\temp.win-amd64-3.6\Release\GPA.obj
+GPA.c
+c:\programdata\anaconda3\lib\site-packages\numpy\core\include\numpy\npy_1_7_deprecated_api.h(12) : Warning Msg: Using deprecated NumPy API, disable it by #defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+GPA.c(2136): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+GPA.c(2150): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+GPA.c(2657): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+GPA.c(2658): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+GPA.c(2724): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+GPA.c(3275): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+GPA.c(3565): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+GPA.c(4319): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+GPA.c(4405): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+GPA.c(4559): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+GPA.c(4685): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+GPA.c(4725): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+GPA.c(4883): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+GPA.c(4897): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+GPA.c(5489): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+GPA.c(5490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+GPA.c(5651): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+GPA.c(5686): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+GPA.c(5721): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+GPA.c(5764): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+GPA.c(5799): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+GPA.c(5834): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\BIN\x86_amd64\link.exe /nologo /INCREMENTAL:NO /LTCG /DLL /MANIFEST:EMBED,ID=2 /MANIFESTUAC:NO /LIBPATH:C:\ProgramData\Anaconda3\libs /LIBPATH:C:\ProgramData\Anaconda3\PCbuild\amd64 "/LIBPATH:C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\LIB\amd64" "/LIBPATH:C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\LIB\amd64" "/LIBPATH:C:\Program Files (x86)\Windows Kits\10\lib\10.0.10586.0\ucrt\x64" "/LIBPATH:C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\lib\um\x64" "/LIBPATH:C:\Program Files (x86)\Windows Kits\10\lib\10.0.10586.0\um\x64" /EXPORT:PyInit_GPA build\temp.win-amd64-3.6\Release\GPA.obj "/OUT:C:\Users\Marco Antônio\Desktop\Mestrado\GPA\GPA_AD-master\gpa\GPA.cp36-win_amd64.pyd" /IMPLIB:build\temp.win-amd64-3.6\Release\GPA.cp36-win_amd64.lib
+GPA.obj : warning LNK4197: export 'PyInit_GPA' specified multiple times; using first specification
+   Creating library build\temp.win-amd64-3.6\Release\GPA.cp36-win_amd64.lib and object build\temp.win-amd64-3.6\Release\GPA.cp36-win_amd64.exp
+Generating code
+Finished generating code
+
+C:\Users\Marco Antônio\Desktop\Mestrado\GPA\GPA_AD-master\gpa>
