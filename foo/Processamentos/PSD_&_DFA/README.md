@@ -1,1 +1,0 @@
-Para o processamento do PSD e DFA das séries temporais utilizadas na dissertação, utilizou-se o software "Plota_Versao_2_SERIE_PSD_DFA.py", contido neste diretório e obtido de Zeferino (2017a), escrito na linguagem de programação Python, que plota a Posição X Amplitude da série temporal, e processa o PSD e DFA da série.

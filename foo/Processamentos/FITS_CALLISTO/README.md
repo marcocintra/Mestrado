@@ -1,1 +1,0 @@
-O software "Bleien.py", foi obtido de Monstein, ETH Zurich, e plota o espectro 2D, 1D, e curvas de luz (séries temporais) de arquivos FITS provenientes da rede e-CALLISTO (http://www.e-callisto.org > http://soleil.i4ds.ch/solarradio/callistoQuicklooks/), que contém dados de emissões solares em frequência de rádio, gerados por Espectrômetros Solares de Rádio.
